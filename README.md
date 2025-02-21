@@ -1,1 +1,1 @@
-# Brightness Control Code inPython Language
+# Brightness Control Code in Python Language
