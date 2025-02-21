@@ -1,1 +1,1 @@
-# sPydE
+# Brightness Control Code inPython Language
