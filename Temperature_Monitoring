@@ -1,12 +1,13 @@
 import random
 import time
 
-def monitor_temperature(threshold=30):
+def monitor_temperature(upper_threshold=30, lower_threshold=0):
     """
-    Monitors temperature and sends an alert if it exceeds the threshold.
+    Monitors temperature and sends an alert if it exceeds the upper threshold or falls below the lower threshold.
 
     Parameters:
-    threshold (int): The temperature threshold for triggering an alert. Default is 30°C.
+    upper_threshold (int): The temperature threshold for triggering an alert when the temperature exceeds it. Default is 30°C.
+    lower_threshold (int): The temperature threshold for triggering an alert when the temperature falls below it. Default is 0°C.
     """
     while True:
         # Simulating a random temperature between -10°C to 50°C
@@ -14,9 +15,12 @@ def monitor_temperature(threshold=30):
 
         print(f"Current temperature: {current_temperature}°C")
 
-        # Check if the temperature exceeds the threshold
-        if current_temperature > threshold:
+        # Check if the temperature exceeds the upper threshold
+        if current_temperature > upper_threshold:
             print("ALERT: Temperature is too high! Take necessary actions!")
+        # Check if the temperature is below the lower threshold
+        elif current_temperature < lower_threshold:
+            print("ALERT: Temperature is too low! Take necessary actions!")
         else:
             print("Temperature is normal.")
 
@@ -25,3 +29,4 @@ def monitor_temperature(threshold=30):
 
 # Run the temperature monitoring function
 monitor_temperature()
+
